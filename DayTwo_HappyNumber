@@ -1,0 +1,19 @@
+class Solution(object):
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        n = [int(i)**2 for i in str(n)]
+        n_= sum(n)      
+
+        try:
+            if n_== 1:
+                return True
+            elif n_ ==4:
+                return False
+                
+            else:
+                return self.isHappy(n_)
+        except RuntimeError:
+                return True 
