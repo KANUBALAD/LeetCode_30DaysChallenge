@@ -1,0 +1,19 @@
+class Solution(object):
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        
+        max_iter = 0
+        final_max = min(nums)
+        #n = len(nums)
+        for i in range(len(nums)):
+            max_iter = max(nums[i],nums[i]+ max_iter)
+            if max_iter > final_max:
+                final_max = max_iter
+            
+        return  final_max
+    
+    
+        
