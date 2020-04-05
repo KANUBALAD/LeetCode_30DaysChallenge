@@ -1,0 +1,22 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        max_profit = []
+        for i in range(len(prices)-1):
+            sell, buy = 0, 0
+            if prices[i]>prices[i+1]:
+                i = i+1  
+                
+            else:
+                buy = prices[i]
+                sell = prices[i+1]
+                profit = sell-buy
+                print("profit", profit)
+                max_profit.append(profit)
+                i = i+2
+            
+        return sum(max_profit)                
+  
