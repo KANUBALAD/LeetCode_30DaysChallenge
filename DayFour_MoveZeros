@@ -1,0 +1,15 @@
+class Solution(object):
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        zeros= nums.count(0)*[0]        
+        nums[:] = filter(None, nums)
+        nums.extend(zeros) 
+        
+m = Solution()
+
+#[0,1,0,3,12]
+m.moveZeroes([0, 0, 1])
+        
