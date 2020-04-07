@@ -1,0 +1,14 @@
+class Solution(object):
+    def countElements(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+        count_numb = 0
+        for num in range(len(arr)):
+            if arr[num]+1 in arr:
+                count_numb +=1
+            else:
+                num = num+1
+        return count_numb
+            
