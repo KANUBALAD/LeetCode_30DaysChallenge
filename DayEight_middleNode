@@ -1,0 +1,16 @@
+class Solution(object):
+    def middleNode(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        first = head
+        second = head
+        
+        while first is not None and first.next is not None:
+            second = second.next
+            first = first.next.next
+            
+        return second
+            
+    
