@@ -1,0 +1,6 @@
+for l, a in shift:
+            if l:
+                s = s[-a:] + s[:-a]
+            else:
+                s = s[a:]+s[:a]
+        return s
