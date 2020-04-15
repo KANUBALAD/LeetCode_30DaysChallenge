@@ -1,0 +1,24 @@
+class Solution(object):
+    def lastStoneWeight(self, stones):
+        """
+        :type stones: List[int]
+        :rtype: int
+        """
+    
+        while len(stones)>1:
+            stones = sorted(stones)
+            max_1 = stones[-1]
+            max_2 = stones[-2]
+            if max_2==max_1:
+                stones.pop()
+                stones.pop()
+
+            elif  max_2 !=max_1:
+                stones.pop()
+                stones.pop()
+                stones.append(max_1 - max_2)
+
+        if not stones:
+            print(0) 
+        else:
+            print(stones[0])
