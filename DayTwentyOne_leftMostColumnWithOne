@@ -1,0 +1,29 @@
+class Solution(object):
+    def leftMostColumnWithOne(self, binaryMatrix):
+        """
+        :type binaryMatrix: BinaryMatrix
+        :rtype: int
+        """
+
+        maxrow,maxcol=binaryMatrix.dimensions()
+        state=0
+        rp=maxcol-1
+        lp=0
+        row=0
+        while row<maxrow and not state:
+            state=state or binaryMatrix.get(row,rp)
+            row+=1
+        if not state:
+            return -1
+
+        while lp<=rp:
+            mp=(rp+lp)//2
+            row=state=0
+            while row<maxrow and not state:
+                state=state or binaryMatrix.get(row,mp)
+                row+=1
+            if not state:
+                lp=mp+1
+            else:
+                rp=mp-1
+        return lp
